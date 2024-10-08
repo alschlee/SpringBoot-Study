@@ -13,9 +13,11 @@ public class Main {
     }
 
     @Bean
-    CommandLineRunner run(UserService userService) {
+    CommandLineRunner run(UserService userService,
+                          UserServiceSetterInjection userServiceSetterInjection) {
         return args -> {
             System.out.println(userService.provideService());
+            System.out.println(userServiceSetterInjection.provideService());
         };
     }
 }
